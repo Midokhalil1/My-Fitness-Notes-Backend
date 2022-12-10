@@ -8,13 +8,13 @@ import { ObjectId } from "mongodb"
 export async function addNewNote(req, res) {
     const newNote = req.body
     const db = dbConnect()
-    await db.collection("notes").insertOne
-    (newNote)
+    await db.collection("notes").insertOne(newNote)
     .catch(err => {
         res.status(500).send(err)
         return 
 })
-res.status(201).send({ message: "New Note Added." })
+// res.status(201).send({ message: "New Note Added." })
+getAllNotes(req, res);
 }
 
 export async function getAllNotes(req, res) {
@@ -39,7 +39,7 @@ export async function updateNote(req, res) {
             res.status(500).send(err)
             return
         })
-    res.status(202).send({ message: "note updated" })
+    // res.status(202).send({ message: "note updated" })
     getAllNotes(req, res)
 }
 export async function getOneNote(req, res) {

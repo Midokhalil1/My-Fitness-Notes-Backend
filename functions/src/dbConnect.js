@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-
+// MongoClient- Nodejs library thats handle connecting to and interacting with MongoDB database.
 import 'dotenv/config'
 
 export function dbConnect () {
@@ -7,4 +7,3 @@ export function dbConnect () {
     return client.db("mydatabase");
 }
 
-// MongoClient- Nodejs library thats handle connecting to and interacting with MongoDB database.
